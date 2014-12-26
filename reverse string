@@ -1,0 +1,7 @@
+def reverse_string (s):
+    ## reverses a string of characters s
+    s_rev = ''
+    for i in range(1,len(s)+1):
+        s_rev += s[-i]
+
+    return s_rev

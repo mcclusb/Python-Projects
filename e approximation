@@ -1,0 +1,23 @@
+def e_approx(n):
+    ## aproximates e to n digits using infinite series
+    epsilon = 1/float(10**n)
+    e_initial = 0
+    e_last= 1
+    e_next = 1
+    i = 1
+
+    if n > 0 and n <= 100:
+        while abs(e_last - e_initial) > epsilon:
+            term = 1/float(math.factorial(i))
+            e_next += term
+            i += 1
+
+            if abs(e_next - e_last) > epsilon:
+                e_initial = e_last
+                e_last = e_next
+                
+            else:
+                return round(e_next,n)
+    else:
+
+        return "Error: n must be between 1 and 100"

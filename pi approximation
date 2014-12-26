@@ -1,0 +1,29 @@
+def pi_approx(n):
+    ## Uses Nilakantha series to calculate successive places of pi
+    epsilon = 1/float(10**n)
+    coeff = 1
+    pi_initial = 0
+    pi_last= 1
+    pi_next = 3
+    x = 2
+    y = 3
+    z = 4
+
+    if n > 0 and n <= 100:
+        while abs(pi_last - pi_initial) > epsilon:
+            term = coeff * (4/float(x*y*z))
+            pi_next += term
+
+            if abs(pi_next - pi_last) > epsilon:
+                x += 2
+                y += 2
+                z += 2
+                pi_initial = pi_last
+                pi_last = pi_next
+                coeff *= -1
+                
+            else:
+                return round(pi_next,n)
+    else:
+
+        return "Error: n must be between 0 and 100"

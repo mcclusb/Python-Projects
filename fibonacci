@@ -1,0 +1,19 @@
+def fibonacci(n):
+    ## prints n terms of fibonacci sequence
+
+    term_last = 0
+    term = 1
+    term_next = 1
+
+    for i in range(0, n):
+        if i == 0:
+            print 0,
+
+        elif i == 1:
+            print 1,
+            
+        else:
+            term_next = term + term_last
+            print term_next,
+            term_last = term
+            term = term_next

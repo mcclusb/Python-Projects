@@ -1,0 +1,16 @@
+def primeFactor(n):
+    ## finds all Prime Factors (if there are any) and displays them.
+    factors = [1,n]
+    result = n
+
+    if n % 2 == 0:
+        factors.append(2)
+        result = n/2
+
+    for i in range (3, n, 2):
+        if result % i == 0:
+            factors.append(i)
+            result = result / i
+
+    return sorted(factors)
+    

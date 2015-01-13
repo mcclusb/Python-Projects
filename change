@@ -1,0 +1,40 @@
+def change(price, cash):
+    ## Calculates the change due in dollars and number of coins
+    q = 0.25
+    d = 0.10
+    n = 0.05
+    p = 0.01
+
+    quarters = 0
+    dimes = 0
+    nickles = 0
+    pennies = 0
+
+    change = cash - price
+
+    dollars = change // 1
+
+    coin = change - dollars
+
+    while coin > .01:
+
+        if coin >= q:
+            quarters = coin // q
+            coin = coin % q
+
+        elif coin >= d:
+            dimes = coin // d
+            coin = coin % d
+
+        elif coin >= n:
+            nickles = coin // n
+            coin = coin % n
+
+        else:
+            pennies = coin // p
+            coin = coin % p
+
+    return 'Your change is ' + str(dollars) + ' dollars, '\
+           + str(quarters) + ' quarters, ' + str(dimes) +\
+           ' dimes, ' + str(nickles) + ' nickles, and '\
+           + str(pennies) + ' pennies.'

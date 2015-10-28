@@ -1,0 +1,25 @@
+def fibonacci_sum (n):
+    sum = 0
+    sequence = []
+    term_last = 0
+    term = 1
+    term_next = 1
+
+    for i in range (0, n):
+        if term >= 4000000:
+            break
+        elif i == 0:
+            sequence.append(0)
+        elif i == 1:
+            sequence.append(1)
+        else:
+            term_next = term + term_last
+            sequence.append(term)
+            term_last = term
+            term = term_next
+
+    for j in sequence:
+        if j % 2 == 0:
+            sum += j
+    print sequence
+    print sum

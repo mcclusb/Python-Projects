@@ -1,0 +1,9 @@
+def largestPrimeFactor(n):
+    import math
+    lpf = n
+    for i in range (int(math.sqrt(lpf)), 1, -1):
+        if lpf % i == 0:
+            lpf = i
+
+    return lpf
+    
